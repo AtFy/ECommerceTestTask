@@ -11,7 +11,5 @@ public static class Program
         using var scope = container.BeginLifetimeScope();
         var app = scope.Resolve<IApplication>();
         app.Run();
-
-        Console.ReadKey();
     }
 }

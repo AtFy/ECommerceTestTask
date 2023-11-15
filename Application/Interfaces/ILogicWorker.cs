@@ -2,7 +2,11 @@
 
 public interface ILogicWorker
 {
-    public string RunSqlAnalysis();
+    public Task RunSqlAnalysisAsync();
 
-    public string RunNoSqlAnalysis();
+    public Task RunNoSqlAnalysisAsync();
+
+    public bool IsRunning { get; }
+
+    public float Progress { get; }
 }
