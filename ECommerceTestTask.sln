@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{93D3C064-A997-47C0-9631-9CDA34CEBA83}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{53457FE0-D1C4-41D0-B6BF-596452ADC42D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analyzer", "Analyzer\Analyzer.csproj", "{1C2190EF-EBF4-41DC-ACA2-387DA2FCDD0D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,12 @@ Global
 		{93D3C064-A997-47C0-9631-9CDA34CEBA83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93D3C064-A997-47C0-9631-9CDA34CEBA83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93D3C064-A997-47C0-9631-9CDA34CEBA83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C2190EF-EBF4-41DC-ACA2-387DA2FCDD0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C2190EF-EBF4-41DC-ACA2-387DA2FCDD0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C2190EF-EBF4-41DC-ACA2-387DA2FCDD0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C2190EF-EBF4-41DC-ACA2-387DA2FCDD0D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1C2190EF-EBF4-41DC-ACA2-387DA2FCDD0D} = {53457FE0-D1C4-41D0-B6BF-596452ADC42D}
 	EndGlobalSection
 EndGlobal
