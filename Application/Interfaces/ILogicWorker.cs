@@ -1,10 +1,10 @@
-﻿namespace Application.Interfaces;
+﻿using Lib.Analyzer.Interfaces;
+
+namespace Application.Interfaces;
 
 public interface ILogicWorker
 {
-    public Task RunSqlAnalysisAsync();
-
-    public Task RunNoSqlAnalysisAsync();
+    public Task RunAnalysisAsync(IAnalyzer analyzer);
 
     public bool IsRunning { get; }
 

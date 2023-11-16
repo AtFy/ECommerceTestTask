@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using Application.Interfaces;
 using Autofac;
+using Lib.Analyzer.Interfaces;
 
 namespace Application;
 
@@ -15,7 +16,7 @@ public static class ContainerConfigurator
         builder.RegisterType<CLIPresenter>().As<IPresenter>().SingleInstance();
         builder.RegisterAssemblyTypes(Assembly.Load(nameof(Lib.Analyzer)))
             .Where(type => !type.Namespace.Contains("Interfaces"))
-            .As(type => type.GetInterfaces().FirstOrDefault(i => i.Name == $"I{type.Name}"));
+            .As<IAnalyzer>();
 
         return builder.Build();
     }

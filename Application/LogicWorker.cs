@@ -1,4 +1,5 @@
 ﻿using Application.Interfaces;
+using Lib.Analyzer;
 using Lib.Analyzer.Interfaces;
 
 namespace Application;
@@ -8,9 +9,9 @@ public delegate void AnalysisCompletedEventHandler(string result);
 public delegate void ProgressedEventHandler(float progress);
 public class LogicWorker : ILogicWorker
 {
-    public LogicWorker(IDbController dbController)
+    public LogicWorker()
     {
-        _dbController = dbController;
+
     }
 
     public static event AnalysisCompletedEventHandler AnalysisCompletedEvent;
@@ -22,30 +23,18 @@ public class LogicWorker : ILogicWorker
     public float Progress { get; private set; } = 0f;
 
     private void IncreaseProgress() => Progress += 0.25f;
-
-    private IDbController _dbController;
     
-    public async Task RunSqlAnalysisAsync()
+    public async Task RunAnalysisAsync(IAnalyzer analyzer)
     {
         IsRunning = true;
-        var result = await Task.Run(RunSqlAnalysis);
+        var result = await Task.Run(() => RunAnalysis(analyzer));
         IsRunning = false;
         Progress = 0f;
         
         AnalysisCompletedEvent.Invoke(result);
     }
     
-    public async Task RunNoSqlAnalysisAsync()
-    {
-        IsRunning = true;
-        var result = await Task.Run(RunNoSqlAnalysis);
-        IsRunning = false;
-        Progress = 0f;
-        
-        AnalysisCompletedEvent.Invoke(result);
-    }
-    
-    private string RunSqlAnalysis()
+    private string RunAnalysis(IAnalyzer analyzer)
     {
         Thread.Sleep(2000);
         IncreaseProgress();
@@ -56,12 +45,7 @@ public class LogicWorker : ILogicWorker
         Thread.Sleep(2000);
         IncreaseProgress();
         ProgressedEvent.Invoke(Progress);
-        return "123";
-    }
-
-    private string RunNoSqlAnalysis()
-    {
-        Thread.Sleep(5000);
-        return "423123";
+        
+        return analyzer.RunAnalysis();
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Reflection.Metadata.Ecma335;
 using Application.Interfaces;
+using Lib.Analyzer;
 
 namespace Application;
 
@@ -22,29 +23,20 @@ public class Application : IApplication
             _presenter.ShowMenu(_logicWorker.Progress);
             
             var userCommand = Console.ReadLine();
-            if (userCommand == CommandInterpritator.GetCommandEnterpritation(Commands.SqlAnalysis))
-            {
-                if (_logicWorker.IsRunning)
-                {
-                    _presenter.ShowAlreadyRunning();
-                    continue;
-                }
-                _logicWorker.RunSqlAnalysisAsync();
-            }
-
-            if (userCommand == CommandInterpritator.GetCommandEnterpritation(Commands.NoSqlAnalysis))
-            {
-                if (_logicWorker.IsRunning)
-                {
-                    _presenter.ShowAlreadyRunning();
-                    continue;
-                }
-                _logicWorker.RunNoSqlAnalysisAsync();
-            }
-
             if (userCommand == CommandInterpritator.GetCommandEnterpritation(Commands.Stop))
             {
                 return;
+            }
+
+            if (CommandInterpritator.CheckIfCommand(userCommand))
+            {
+                if (_logicWorker.IsRunning)
+                {
+                    _presenter.ShowAlreadyRunning();
+                    continue;
+                }
+
+                _logicWorker.RunAnalysisAsync(CommandInterpritator.GetAnalyzer(userCommand));
             }
         }
     }
