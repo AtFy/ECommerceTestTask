@@ -10,3 +10,5 @@ D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Analyzer\obj\Debug\net7.0\Analyzer
 D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Analyzer\obj\Debug\net7.0\refint\Analyzer.dll
 D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Analyzer\obj\Debug\net7.0\Analyzer.pdb
 D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Analyzer\obj\Debug\net7.0\ref\Analyzer.dll
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Analyzer\bin\Debug\net7.0\Analyzer.runtimeconfig.json
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Analyzer\obj\Debug\net7.0\Analyzer.genruntimeconfig.cache

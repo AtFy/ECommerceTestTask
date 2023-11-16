@@ -36,16 +36,6 @@ public class LogicWorker : ILogicWorker
     
     private string RunAnalysis(IAnalyzer analyzer)
     {
-        Thread.Sleep(2000);
-        IncreaseProgress();
-        ProgressedEvent.Invoke(Progress);
-        Thread.Sleep(1000);
-        IncreaseProgress();
-        ProgressedEvent.Invoke(Progress);
-        Thread.Sleep(2000);
-        IncreaseProgress();
-        ProgressedEvent.Invoke(Progress);
-        
         return analyzer.RunAnalysis();
     }
 }
