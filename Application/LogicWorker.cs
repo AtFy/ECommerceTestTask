@@ -24,18 +24,13 @@ public class LogicWorker : ILogicWorker
 
     private void IncreaseProgress() => Progress += 0.25f;
     
-    public async Task RunAnalysisAsync(IAnalyzer analyzer)
+    public async Task RunAnalysisAsync(IAnalyzer analyzer, (DateOnly dateStart, DateOnly dateFinish) dates)
     {
         IsRunning = true;
-        var result = await Task.Run(() => RunAnalysis(analyzer));
+        var result = await Task.Run(() => analyzer.RunAnalysis(dates));
         IsRunning = false;
         Progress = 0f;
         
         AnalysisCompletedEvent.Invoke(result);
-    }
-    
-    private string RunAnalysis(IAnalyzer analyzer)
-    {
-        return analyzer.RunAnalysis();
     }
 }

@@ -2,5 +2,5 @@
 
 public interface IAnalyzer
 {
-    public string RunAnalysis();
+    public string RunAnalysis((DateOnly dateStart, DateOnly dateFinish) dates);
 }

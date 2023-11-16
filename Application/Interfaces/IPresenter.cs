@@ -6,5 +6,9 @@ public interface IPresenter
 
     public void ShowAlreadyRunning();
 
+    public void ShowDateIssue();
+
+    public void ShowUnexpectedInputIssue();
+
     public void OnAnalysisCompletedShowResult(string result);
 }

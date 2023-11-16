@@ -17,3 +17,17 @@ D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Application\obj\Debug\net7.0\refin
 D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Application\obj\Debug\net7.0\Application.pdb
 D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Application\obj\Debug\net7.0\Application.genruntimeconfig.cache
 D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Application\obj\Debug\net7.0\ref\Application.dll
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Application\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Application\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Application\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Application\bin\Debug\net7.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Application\bin\Debug\net7.0\Microsoft.Extensions.Caching.Memory.dll
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Application\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Application\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.dll
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Application\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Application\bin\Debug\net7.0\Microsoft.Extensions.Logging.dll
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Application\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Application\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Application\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Application\bin\Debug\net7.0\MySqlConnector.dll
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Application\bin\Debug\net7.0\Pomelo.EntityFrameworkCore.MySql.dll

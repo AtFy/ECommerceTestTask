@@ -1,4 +1,6 @@
 ﻿using System.Reflection.Metadata.Ecma335;
+using System.Runtime.InteropServices.JavaScript;
+using Application.Extensions;
 using Application.Interfaces;
 using Lib.Analyzer;
 
@@ -22,12 +24,34 @@ public class Application : IApplication
         {
             _presenter.ShowMenu(_logicWorker.Progress);
             
-            var userCommand = Console.ReadLine();
-            if (userCommand == CommandInterpritator.GetCommandEnterpritation(Commands.Stop))
+            var userInput = Console.ReadLine();
+            if (!Validator.CheckIfInputFormatCorrect(userInput))
+            {
+                continue;
+            }
+            
+            if (userInput == CommandInterpritator.GetCommandEnterpritation(Commands.Stop))
             {
                 return;
             }
-
+            
+            var userCommand = userInput?.Split('|')[0].TrimEnd();
+            
+            (DateOnly dateStart, DateOnly dateFinish) userDates = (DateOnly.MinValue, DateOnly.MinValue);
+            try
+            {
+                userDates = userInput.GetDatesFromUserInput();
+            }
+            catch (ArgumentException)
+            {
+                _presenter.ShowDateIssue();
+            }
+            catch
+            {
+                _presenter.ShowUnexpectedInputIssue();
+            }
+            
+            
             if (CommandInterpritator.CheckIfCommand(userCommand))
             {
                 if (_logicWorker.IsRunning)
@@ -36,7 +60,7 @@ public class Application : IApplication
                     continue;
                 }
 
-                _logicWorker.RunAnalysisAsync(CommandInterpritator.GetAnalyzer(userCommand));
+                _logicWorker.RunAnalysisAsync(CommandInterpritator.GetAnalyzer(userCommand), userDates);
             }
         }
     }

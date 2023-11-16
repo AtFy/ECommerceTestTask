@@ -55,6 +55,18 @@ public class CLIPresenter : IPresenter
         Console.WriteLine($"Process is already running. Can't start the 2nd one.");
         Thread.Sleep(3000);
     }
+
+    public void ShowDateIssue()
+    {
+        Console.WriteLine($"Date period is invalid. Fist date should be lower than the 2nd.");
+        Thread.Sleep(3000);
+    }
+
+    public void ShowUnexpectedInputIssue()
+    {
+        Console.WriteLine($"Unexpected error appeared while reading command.");
+        Thread.Sleep(3000);
+    }
     
     public void OnAnalysisCompletedShowResult(string result)
     {
