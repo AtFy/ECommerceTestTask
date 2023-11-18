@@ -10,6 +10,7 @@
         "dependencies": {
           "Analyzer": "1.0.0",
           "Autofac": "7.1.0",
+          "DbController": "1.0.0",
           "Pomelo.EntityFrameworkCore.MySql": "7.0.0"
         },
         "runtime": {
@@ -184,10 +185,18 @@
       "System.Diagnostics.DiagnosticSource/4.7.1": {},
       "Analyzer/1.0.0": {
         "dependencies": {
-          "Pomelo.EntityFrameworkCore.MySql": "7.0.0"
+          "DbController": "1.0.0"
         },
         "runtime": {
           "Analyzer.dll": {}
+        }
+      },
+      "DbController/1.0.0": {
+        "dependencies": {
+          "Pomelo.EntityFrameworkCore.MySql": "7.0.0"
+        },
+        "runtime": {
+          "DbController.dll": {}
         }
       }
     }
@@ -318,6 +327,11 @@
       "hashPath": "system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
     },
     "Analyzer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DbController/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

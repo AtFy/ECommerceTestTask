@@ -4,7 +4,7 @@ namespace Application.Interfaces;
 
 public interface ILogicWorker
 {
-    public Task RunAnalysisAsync(IAnalyzer analyzer, (DateOnly dateStart, DateOnly dateFinish) dates);
+    public Task RunAnalysisAsync(IAnalyzer analyzer, (DateTime dateStart, DateTime dateFinish) dates);
 
     public bool IsRunning { get; }
 

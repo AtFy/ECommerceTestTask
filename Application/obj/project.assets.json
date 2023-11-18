@@ -297,13 +297,26 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Pomelo.EntityFrameworkCore.MySql": "7.0.0"
+          "DbController": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Analyzer.dll": {}
         },
         "runtime": {
           "bin/placeholder/Analyzer.dll": {}
+        }
+      },
+      "DbController/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Pomelo.EntityFrameworkCore.MySql": "7.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DbController.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DbController.dll": {}
         }
       }
     }
@@ -755,12 +768,18 @@
       "type": "project",
       "path": "../Analyzer/Analyzer.csproj",
       "msbuildProject": "../Analyzer/Analyzer.csproj"
+    },
+    "DbController/1.0.0": {
+      "type": "project",
+      "path": "../DbController/DbController.csproj",
+      "msbuildProject": "../DbController/DbController.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "Analyzer >= 1.0.0",
       "Autofac >= 7.1.0",
+      "DbController >= 1.0.0",
       "Pomelo.EntityFrameworkCore.MySql >= 7.0.0"
     ]
   },
@@ -798,6 +817,9 @@
           "projectReferences": {
             "D:\\AtFy\\Dev\\Projects\\CSharp\\ECommerceTestTask\\Analyzer\\Analyzer.csproj": {
               "projectPath": "D:\\AtFy\\Dev\\Projects\\CSharp\\ECommerceTestTask\\Analyzer\\Analyzer.csproj"
+            },
+            "D:\\AtFy\\Dev\\Projects\\CSharp\\ECommerceTestTask\\DbController\\DbController.csproj": {
+              "projectPath": "D:\\AtFy\\Dev\\Projects\\CSharp\\ECommerceTestTask\\DbController\\DbController.csproj"
             }
           }
         }

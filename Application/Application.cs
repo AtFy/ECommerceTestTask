@@ -37,7 +37,7 @@ public class Application : IApplication
             
             var userCommand = userInput?.Split('|')[0].TrimEnd();
             
-            (DateOnly dateStart, DateOnly dateFinish) userDates = (DateOnly.MinValue, DateOnly.MinValue);
+            (DateTime dateStart, DateTime dateFinish) userDates = (DateTime.MinValue, DateTime.MinValue);
             try
             {
                 userDates = userInput.GetDatesFromUserInput();

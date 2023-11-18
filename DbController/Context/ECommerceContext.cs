@@ -1,7 +1,7 @@
-﻿using Lib.Analyzer.Models;
+﻿using Lib.DbController.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Lib.Analyzer.Context;
+namespace Lib.DbController.Context;
 
 public partial class ECommerceContext : DbContext
 {
@@ -37,6 +37,7 @@ public partial class ECommerceContext : DbContext
         modelBuilder
             .UseCollation("utf8mb4_general_ci")
             .HasCharSet("utf8mb4");
+        
 
         modelBuilder.Entity<Event>(entity =>
         {

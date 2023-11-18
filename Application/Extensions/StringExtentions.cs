@@ -2,10 +2,10 @@
 
 public static class StringExtensions
 {
-    public static (DateOnly dateStart, DateOnly dateFinish) GetDatesFromUserInput(this string input)
+    public static (DateTime dateStart, DateTime dateFinish) GetDatesFromUserInput(this string input)
     {
-        var dateStart = DateOnly.Parse(input.Split('|')[1].Split('-')[0]);
-        var dateFinish = DateOnly.Parse(input.Split('|')[1].Split('-')[1]);
+        var dateStart = DateTime.Parse(input.Split('|')[1].Split('-')[0]);
+        var dateFinish = DateTime.Parse(input.Split('|')[1].Split('-')[1]);
 
         if (dateStart >= dateFinish)
         {

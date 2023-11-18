@@ -2,6 +2,8 @@
 using Application.Interfaces;
 using Autofac;
 using Lib.Analyzer.Interfaces;
+using Lib.DbController.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace Application;
 
@@ -13,7 +15,7 @@ public static class ContainerConfigurator
 
         builder.RegisterType<Application>().As<IApplication>().SingleInstance();
         builder.RegisterType<LogicWorker>().As<ILogicWorker>().SingleInstance();
-        builder.RegisterType<CLIPresenter>().As<IPresenter>().SingleInstance();
+        builder.RegisterType<CliPresenter>().As<IPresenter>().SingleInstance();
         builder.RegisterAssemblyTypes(Assembly.Load(nameof(Lib.Analyzer)))
             .Where(type => !type.Namespace.Contains("Interfaces"))
             .As<IAnalyzer>();

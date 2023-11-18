@@ -31,3 +31,5 @@ D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Application\bin\Debug\net7.0\Micro
 D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Application\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll
 D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Application\bin\Debug\net7.0\MySqlConnector.dll
 D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Application\bin\Debug\net7.0\Pomelo.EntityFrameworkCore.MySql.dll
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Application\bin\Debug\net7.0\DbController.dll
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\Application\bin\Debug\net7.0\DbController.pdb

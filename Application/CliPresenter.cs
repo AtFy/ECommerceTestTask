@@ -2,9 +2,9 @@
 
 namespace Application;
 
-public class CLIPresenter : IPresenter
+public class CliPresenter : IPresenter
 {
-    public CLIPresenter()
+    public CliPresenter()
     {
         LogicWorker.AnalysisCompletedEvent += OnAnalysisCompletedShowResult;
         LogicWorker.ProgressedEvent += ShowMenu;
@@ -15,11 +15,13 @@ public class CLIPresenter : IPresenter
         
         PrintDivider();
         Console.WriteLine("Please, select the required option by typing a command in the CLI.\nPrint...\n" +
-                          $"{CommandInterpritator.GetCommandEnterpritation(Commands.SqlAnalysis)}" +
+                          $"\"{CommandInterpritator.GetCommandEnterpritation(Commands.SqlAnalysis)}" +
+                          $" | dd.mm.yyyy-dd.mm.yyyy\"" +
                           " - to perform the analysis using SQL.\n" +
-                          $"{CommandInterpritator.GetCommandEnterpritation(Commands.CsvAnalysis)}" +
+                          $"\"{CommandInterpritator.GetCommandEnterpritation(Commands.CsvAnalysis)}" +
+                          $" | dd.mm.yyyy-dd.mm.yyyy>\"" +
                           " - to perform the analysis using raw CSV file.\n" +
-                          $"{CommandInterpritator.GetCommandEnterpritation(Commands.Stop)}" +
+                          $"\"{CommandInterpritator.GetCommandEnterpritation(Commands.Stop)}\"" +
                           $" - to exit the application. You can use \"stop\" command to exit application any time.");
         PrintLoadingBar(progress);
         PrintDivider();
@@ -68,11 +70,11 @@ public class CLIPresenter : IPresenter
         Thread.Sleep(3000);
     }
     
-    public void OnAnalysisCompletedShowResult(string result)
+    public void OnAnalysisCompletedShowResult(string result, (DateTime dateStart, DateTime dateFinish) dates)
     {
         Console.Clear();
         ShowMenu(1f);
-        Console.WriteLine($"Here is the result: {result}\n" +
+        Console.WriteLine($"Results ({dates.dateStart.ToShortDateString()}-{dates.dateFinish.ToShortDateString()}):\n{result}\n" +
                           $"Press any key to proceed to main menu.");
         Console.ReadKey();
         

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Lib.Analyzer.Models;
+namespace Lib.DbController.Models;
 
 public partial class Event
 {

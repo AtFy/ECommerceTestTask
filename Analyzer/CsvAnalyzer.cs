@@ -1,10 +1,13 @@
-﻿using Lib.Analyzer.Interfaces;
+﻿using System.Runtime.CompilerServices;
+using Lib.Analyzer.Interfaces;
 
 namespace Lib.Analyzer;
 
 public class CsvAnalyzer : IAnalyzer
 {
-    public string RunAnalysis((DateOnly dateStart, DateOnly dateFinish) dates)
+    public event AnalysisStepProgressedEventHandler AnalysisProgressedEvent;
+    
+    public async Task<string> RunAnalysisAsync((DateTime dateStart, DateTime dateFinish) dates)
     {
         return "csv";
     }

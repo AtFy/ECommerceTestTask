@@ -10,5 +10,5 @@ public interface IPresenter
 
     public void ShowUnexpectedInputIssue();
 
-    public void OnAnalysisCompletedShowResult(string result);
+    public void OnAnalysisCompletedShowResult(string result, (DateTime dateStart, DateTime dateFinish) dates);
 }

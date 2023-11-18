@@ -4,16 +4,11 @@ using Lib.Analyzer.Interfaces;
 
 namespace Application;
 
-public delegate void AnalysisCompletedEventHandler(string result);
+public delegate void AnalysisCompletedEventHandler(string result,(DateTime dateStart, DateTime dateFinish) dates);
 
 public delegate void ProgressedEventHandler(float progress);
 public class LogicWorker : ILogicWorker
 {
-    public LogicWorker()
-    {
-
-    }
-
     public static event AnalysisCompletedEventHandler AnalysisCompletedEvent;
 
     public static event ProgressedEventHandler ProgressedEvent;
@@ -22,15 +17,23 @@ public class LogicWorker : ILogicWorker
 
     public float Progress { get; private set; } = 0f;
 
-    private void IncreaseProgress() => Progress += 0.25f;
-    
-    public async Task RunAnalysisAsync(IAnalyzer analyzer, (DateOnly dateStart, DateOnly dateFinish) dates)
+    private void IncreaseProgress()
+    {
+        Progress += 0.25f;
+        ProgressedEvent.Invoke(Progress);
+    }
+
+    public async Task RunAnalysisAsync(IAnalyzer analyzer, (DateTime dateStart, DateTime dateFinish) dates)
     {
         IsRunning = true;
-        var result = await Task.Run(() => analyzer.RunAnalysis(dates));
+        analyzer.AnalysisProgressedEvent += IncreaseProgress;
+        
+        var result = await Task.Run(() => analyzer.RunAnalysisAsync(dates));
+        
         IsRunning = false;
+        analyzer.AnalysisProgressedEvent -= IncreaseProgress;
         Progress = 0f;
         
-        AnalysisCompletedEvent.Invoke(result);
+        AnalysisCompletedEvent.Invoke(result, dates);
     }
 }

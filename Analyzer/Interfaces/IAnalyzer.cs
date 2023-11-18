@@ -1,6 +1,9 @@
 ﻿namespace Lib.Analyzer.Interfaces;
 
+public delegate void AnalysisStepProgressedEventHandler();
 public interface IAnalyzer
 {
-    public string RunAnalysis((DateOnly dateStart, DateOnly dateFinish) dates);
+    public Task<string> RunAnalysisAsync((DateTime dateStart, DateTime dateFinish) dates);
+
+    public event AnalysisStepProgressedEventHandler AnalysisProgressedEvent;
 }
