@@ -15,7 +15,6 @@ public class SqlAnalyzer : IAnalyzer
         var dbController = new DbController.DbController();
         
         var result = new StringBuilder();
-        result.Clear();
         
         _tasks.Add(dbController.GetTotalGrossForPeriodAsync(dates)
             .ContinueWith((task) => Inv(task.Result).Result));
@@ -30,7 +29,8 @@ public class SqlAnalyzer : IAnalyzer
         {
             result.Append(task.Result);
         }
-        
+
+        _tasks = new();
         GC.Collect();
         return result.ToString();
     }
