@@ -1,28 +1,32 @@
 ﻿using System.Text;
 using Lib.Analyzer.Interfaces;
 using Lib.DbController.Context;
+using Lib.DbController.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Lib.Analyzer;
 
 public class SqlAnalyzer : IAnalyzer
 {
+    public SqlAnalyzer(IDbController dbController)
+    {
+        _dbController = dbController;
+    }
+    private IDbController _dbController;
     public event AnalysisStepProgressedEventHandler AnalysisProgressedEvent;
 
     private List<Task<string>> _tasks = new();
     public async Task<string> RunAnalysisAsync((DateTime dateStart, DateTime dateFinish) dates)
     {
-        var dbController = new DbController.DbController();
-        
         var result = new StringBuilder();
         
-        _tasks.Add(dbController.GetTotalGrossForPeriodAsync(dates)
+        _tasks.Add(_dbController.GetTotalGrossForPeriodAsync(dates)
             .ContinueWith((task) => Inv(task.Result).Result));
-        _tasks.Add(dbController.GetMostPopularBrandAsync(dates)
+        _tasks.Add(_dbController.GetMostPopularBrandAsync(dates)
             .ContinueWith((task) => Inv(task.Result).Result));
-        _tasks.Add(dbController.GetMostPopularCategoryAsync(dates)
+        _tasks.Add(_dbController.GetMostPopularCategoryAsync(dates)
             .ContinueWith((task) => Inv(task.Result).Result));
-        _tasks.Add(dbController.GetMostPopularProductAsync(dates)
+        _tasks.Add(_dbController.GetMostPopularProductAsync(dates)
             .ContinueWith((task) => Inv(task.Result).Result));
         
         foreach (var task in _tasks)
@@ -32,10 +36,11 @@ public class SqlAnalyzer : IAnalyzer
 
         _tasks = new();
         GC.Collect();
+        
         return result.ToString();
     }
 
-    private async Task<string> Inv(string res)
+    private async Task<string> Inv(string res) // TODO: just make public and avoid "string res".
     {
         AnalysisProgressedEvent.Invoke();
         return res;

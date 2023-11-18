@@ -1,5 +1,6 @@
 ﻿using Lib.Analyzer;
 using Lib.Analyzer.Interfaces;
+using Lib.DbController;
 
 namespace Application;
 
@@ -22,7 +23,8 @@ public static class CommandInterpritator
 
     private static Dictionary<string, IAnalyzer> _commandAnalyzers = new Dictionary<string, IAnalyzer>()
     {
-        { _commandsInterpritation[Commands.SqlAnalysis], new SqlAnalyzer() },
+        { _commandsInterpritation[Commands.SqlAnalysis], 
+            new SqlAnalyzer(new ResilientDbController(new DbController())) },
         { _commandsInterpritation[Commands.CsvAnalysis], new CsvAnalyzer() }
     };
 

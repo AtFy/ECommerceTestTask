@@ -1,9 +1,10 @@
 ﻿using Lib.DbController.Context;
+using Lib.DbController.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Lib.DbController;
 
-public class DbController
+public class DbController : IDbController
 {
     public async Task<string> GetTotalGrossForPeriodAsync((DateTime dateStart, DateTime dateFinish) dates)
     {

@@ -2,8 +2,8 @@
 using Application.Interfaces;
 using Autofac;
 using Lib.Analyzer.Interfaces;
-using Lib.DbController.Context;
-using Microsoft.EntityFrameworkCore;
+using Lib.DbController;
+using Lib.DbController.Interfaces;
 
 namespace Application;
 
@@ -19,6 +19,8 @@ public static class ContainerConfigurator
         builder.RegisterAssemblyTypes(Assembly.Load(nameof(Lib.Analyzer)))
             .Where(type => !type.Namespace.Contains("Interfaces"))
             .As<IAnalyzer>();
+        builder.RegisterType<DbController>().As<IDbController>();
+        builder.RegisterType<ResilientDbController>().As<IDbController>();
 
         return builder.Build();
     }
