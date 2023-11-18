@@ -15,17 +15,23 @@ public class SqlAnalyzer : IAnalyzer
         var dbController = new DbController.DbController();
         
         var result = new StringBuilder();
+        result.Clear();
         
         _tasks.Add(dbController.GetTotalGrossForPeriodAsync(dates)
             .ContinueWith((task) => Inv(task.Result).Result));
         _tasks.Add(dbController.GetMostPopularBrandAsync(dates)
+            .ContinueWith((task) => Inv(task.Result).Result));
+        _tasks.Add(dbController.GetMostPopularCategoryAsync(dates)
+            .ContinueWith((task) => Inv(task.Result).Result));
+        _tasks.Add(dbController.GetMostPopularProductAsync(dates)
             .ContinueWith((task) => Inv(task.Result).Result));
         
         foreach (var task in _tasks)
         {
             result.Append(task.Result);
         }
-
+        
+        GC.Collect();
         return result.ToString();
     }
 

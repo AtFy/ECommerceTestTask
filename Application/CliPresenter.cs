@@ -19,7 +19,7 @@ public class CliPresenter : IPresenter
                           $" | dd.mm.yyyy-dd.mm.yyyy\"" +
                           " - to perform the analysis using SQL.\n" +
                           $"\"{CommandInterpritator.GetCommandEnterpritation(Commands.CsvAnalysis)}" +
-                          $" | dd.mm.yyyy-dd.mm.yyyy>\"" +
+                          $" | dd.mm.yyyy-dd.mm.yyyy\"" +
                           " - to perform the analysis using raw CSV file.\n" +
                           $"\"{CommandInterpritator.GetCommandEnterpritation(Commands.Stop)}\"" +
                           $" - to exit the application. You can use \"stop\" command to exit application any time.");
@@ -76,9 +76,9 @@ public class CliPresenter : IPresenter
         ShowMenu(1f);
         Console.WriteLine($"Results ({dates.dateStart.ToShortDateString()}-{dates.dateFinish.ToShortDateString()}):\n{result}\n" +
                           $"Press any key to proceed to main menu.");
-        Console.ReadKey();
-        
-        ShowMenu(0f);
+        //Console.ReadKey();
+        //Console.Clear();
+        //ShowMenu(0f);
         
     }
 }
