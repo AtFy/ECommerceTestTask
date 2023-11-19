@@ -20,8 +20,6 @@ public class SqlAnalyzer : IAnalyzer
     {
         var result = new StringBuilder();
         
-        AnalysisProgressedEvent.Invoke(0.04f);
-        
         _tasks.Add(_dbController.GetTotalGrossForPeriodAsync(dates)
             .ContinueWith((task) => Inv(task.Result).Result));
         _tasks.Add(_dbController.GetMostPopularBrandAsync(dates)
@@ -30,6 +28,8 @@ public class SqlAnalyzer : IAnalyzer
             .ContinueWith((task) => Inv(task.Result).Result));
         _tasks.Add(_dbController.GetMostPopularProductAsync(dates)
             .ContinueWith((task) => Inv(task.Result).Result));
+        
+        AnalysisProgressedEvent.Invoke(0.04f);
         
         foreach (var task in _tasks)
         {

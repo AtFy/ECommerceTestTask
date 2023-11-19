@@ -1,0 +1,14 @@
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\DbController\bin\Release\net7.0\DbController.deps.json
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\DbController\bin\Release\net7.0\DbController.runtimeconfig.json
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\DbController\bin\Release\net7.0\DbController.dll
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\DbController\bin\Release\net7.0\DbController.pdb
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\DbController\obj\Release\net7.0\DbController.csproj.AssemblyReference.cache
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\DbController\obj\Release\net7.0\DbController.GeneratedMSBuildEditorConfig.editorconfig
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\DbController\obj\Release\net7.0\DbController.AssemblyInfoInputs.cache
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\DbController\obj\Release\net7.0\DbController.AssemblyInfo.cs
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\DbController\obj\Release\net7.0\DbController.csproj.CoreCompileInputs.cache
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\DbController\obj\Release\net7.0\DbController.dll
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\DbController\obj\Release\net7.0\refint\DbController.dll
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\DbController\obj\Release\net7.0\DbController.pdb
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\DbController\obj\Release\net7.0\DbController.genruntimeconfig.cache
+D:\AtFy\Dev\Projects\CSharp\ECommerceTestTask\DbController\obj\Release\net7.0\ref\DbController.dll

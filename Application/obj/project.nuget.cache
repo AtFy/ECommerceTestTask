@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "G07+Ns0eKVKuqqfeULJYLdmLfxZwnnR0XdqCHrNQDw4bBp6Dkh4SJg1SSopV+oyxlLM71ifXYSz1fH4UAQfUJA==",
+  "dgSpecHash": "Crgear5HjIOaTLhvh7mhony2L6U1QhwXcnf4HpobBEIFzaxO90FsglD4OKeMj/Ig4mzkHVuo6rcTL89buUCUww==",
   "success": true,
   "projectFilePath": "D:\\AtFy\\Dev\\Projects\\CSharp\\ECommerceTestTask\\Application\\Application.csproj",
   "expectedPackageFiles": [
@@ -20,7 +20,10 @@
     "C:\\Users\\Archie\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\Archie\\.nuget\\packages\\mysqlconnector\\2.2.5\\mysqlconnector.2.2.5.nupkg.sha512",
     "C:\\Users\\Archie\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\7.0.0\\pomelo.entityframeworkcore.mysql.7.0.0.nupkg.sha512",
-    "C:\\Users\\Archie\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
+    "C:\\Users\\Archie\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
+    "C:\\Users\\Archie\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\7.0.9\\microsoft.netcore.app.runtime.win-x64.7.0.9.nupkg.sha512",
+    "C:\\Users\\Archie\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\7.0.9\\microsoft.windowsdesktop.app.runtime.win-x64.7.0.9.nupkg.sha512",
+    "C:\\Users\\Archie\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\7.0.9\\microsoft.aspnetcore.app.runtime.win-x64.7.0.9.nupkg.sha512"
   ],
   "logs": []
 }

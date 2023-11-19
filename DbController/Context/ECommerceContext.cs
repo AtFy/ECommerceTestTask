@@ -16,17 +16,16 @@ public partial class ECommerceContext : DbContext
 
     public virtual DbSet<Event> Events { get; set; }
     
-    // Different EnvironmentVariableTarget for Windows and Unix.
 #if DEBUG
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseMySql(Environment.GetEnvironmentVariable("ECOMMERCE_CONNECTION_STRING", 
                                        EnvironmentVariableTarget.User) ?? 
                                    throw new Exception("Couldn't get connection string."), 
             ServerVersion.Parse("11.1.2-mariadb"));
-#else
+#else // Change EnvironmentVariableTarget to Process to run with docker-compose.
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder.UseMySql(Environment.GetEnvironmentVariable("ECOMMERCE_CONNECTION_STRING", 
-                                       EnvironmentVariableTarget.Process) ?? 
+                                       EnvironmentVariableTarget.User) ?? 
                                    throw new Exception("Couldn't get connection string."), 
             ServerVersion.Parse("11.1.2-mariadb"));
     
