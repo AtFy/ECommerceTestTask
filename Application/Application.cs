@@ -22,6 +22,7 @@ public class Application : IApplication
     {
         while (true)
         {
+            GC.Collect();
             _presenter.ShowMenu(_logicWorker.Progress);
             
             var userInput = Console.ReadLine();

@@ -10,7 +10,7 @@ public class DbController : IDbController
     {
         await using var db = new ECommerceContext();
         return $"> Total gross for the period is $" +
-               $"{await Task.Run(() => GetTotalGrossForPeriod(dates, db))}\n";
+               $"{await Task.Run(() => GetTotalGross(dates, db))}\n";
     }
 
     public async Task<string> GetMostPopularBrandAsync((DateTime dateStart, DateTime dateFinish) dates)
@@ -34,7 +34,7 @@ public class DbController : IDbController
                $"{await Task.Run(() => GetMostPopularProduct(dates, db))}>\n";
     }
 
-    private string GetTotalGrossForPeriod((DateTime dateStart, DateTime dateFinish) dates, ECommerceContext db) =>
+    private string GetTotalGross((DateTime dateStart, DateTime dateFinish) dates, ECommerceContext db) =>
         db.Events
             .Where(ev => ev.EventType != null &&
                          string.Compare(ev.EventType, "purchase") == 0 &&

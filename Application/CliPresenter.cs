@@ -83,7 +83,6 @@ public class CliPresenter : IPresenter
     private void OnCsvAnalysisStartedAskPath()
     {
         Thread.Sleep(10);
-        Console.WriteLine(123);
-        throw new NotImplementedException();
+        Console.WriteLine("Please press enter, and then, provide a full file path.");
     }
 }

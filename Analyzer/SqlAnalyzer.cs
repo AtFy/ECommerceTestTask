@@ -20,6 +20,8 @@ public class SqlAnalyzer : IAnalyzer
     {
         var result = new StringBuilder();
         
+        AnalysisProgressedEvent.Invoke(0.04f);
+        
         _tasks.Add(_dbController.GetTotalGrossForPeriodAsync(dates)
             .ContinueWith((task) => Inv(task.Result).Result));
         _tasks.Add(_dbController.GetMostPopularBrandAsync(dates)
@@ -40,9 +42,9 @@ public class SqlAnalyzer : IAnalyzer
         return result.ToString();
     }
 
-    private async Task<string> Inv(string res) // TODO: just make public and avoid "string res".
+    private async Task<string> Inv(string res)
     {
-        AnalysisProgressedEvent.Invoke();
+        AnalysisProgressedEvent.Invoke(0.24f);
         return res;
     }
 }

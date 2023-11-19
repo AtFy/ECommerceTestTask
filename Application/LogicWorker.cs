@@ -20,11 +20,11 @@ public class LogicWorker : ILogicWorker
 
     private object Locker = new();
     
-    private void IncreaseProgress()
+    private void IncreaseProgress(float stepSize)
     {
         lock (Locker)
         {
-            Progress += 0.25f;
+            Progress += stepSize;
             ProgressedEvent.Invoke(Progress);
         }
     }
