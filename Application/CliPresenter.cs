@@ -1,4 +1,5 @@
 ﻿using Application.Interfaces;
+using Lib.Analyzer;
 
 namespace Application;
 
@@ -8,6 +9,7 @@ public class CliPresenter : IPresenter
     {
         LogicWorker.AnalysisCompletedEvent += OnAnalysisCompletedShowResult;
         LogicWorker.ProgressedEvent += ShowMenu;
+        CsvAnalyzer.CsvAnalysisStartedEvent += OnCsvAnalysisStartedAskPath;
     }
     public void ShowMenu(float progress)
     {
@@ -76,9 +78,12 @@ public class CliPresenter : IPresenter
         ShowMenu(1f);
         Console.WriteLine($"Results ({dates.dateStart.ToShortDateString()}-{dates.dateFinish.ToShortDateString()}):\n{result}\n" +
                           $"Press any key to proceed to main menu.");
-        //Console.ReadKey();
-        //Console.Clear();
-        //ShowMenu(0f);
-        
+    }
+
+    private void OnCsvAnalysisStartedAskPath()
+    {
+        Thread.Sleep(10);
+        Console.WriteLine(123);
+        throw new NotImplementedException();
     }
 }

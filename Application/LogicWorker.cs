@@ -1,5 +1,6 @@
-﻿using Application.Interfaces;
-using Lib.Analyzer;
+﻿
+using Application.Interfaces;
+
 using Lib.Analyzer.Interfaces;
 
 namespace Application;
@@ -17,10 +18,15 @@ public class LogicWorker : ILogicWorker
 
     public float Progress { get; private set; } = 0f;
 
+    private object Locker = new();
+    
     private void IncreaseProgress()
     {
-        Progress += 0.25f;
-        ProgressedEvent.Invoke(Progress);
+        lock (Locker)
+        {
+            Progress += 0.25f;
+            ProgressedEvent.Invoke(Progress);
+        }
     }
 
     public async Task RunAnalysisAsync(IAnalyzer analyzer, (DateTime dateStart, DateTime dateFinish) dates)

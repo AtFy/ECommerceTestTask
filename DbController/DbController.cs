@@ -37,7 +37,6 @@ public class DbController : IDbController
     private string GetTotalGrossForPeriod((DateTime dateStart, DateTime dateFinish) dates, ECommerceContext db) =>
         db.Events
             .Where(ev => ev.EventType != null &&
-                         //ev.EventType.Contains("purchase") &&
                          string.Compare(ev.EventType, "purchase") == 0 &&
                          ev.EventTime >= dates.dateStart &&
                          ev.EventTime <= dates.dateFinish)
