@@ -36,3 +36,16 @@ user=<user_name>;password=<user_pwd>;database=<db_name>;server=<ip>;port=<port>;
 ```
 C:\Users\Archie\Desktop\test.csv
 ```
+
+## Profiling info
+> The application has been designed to work asynchronously and not to store all the data in memory. Each full analysis cycle ends up with GC.
+>
+> Peak memory usage detected is 21MB.
+>
+> Default memory usage detected is 2MB.
+
+![1](https://github.com/AtFy/ECommerceTestTask/assets/75484528/ba7f5a00-7c9e-472a-adfe-8b5d01b9da25)
+
+![2](https://github.com/AtFy/ECommerceTestTask/assets/75484528/419507d1-d0f3-4800-a7db-0623fdb8a68f)
+
+![3](https://github.com/AtFy/ECommerceTestTask/assets/75484528/f03eb4e7-f585-468c-958b-3bea369423fb)
