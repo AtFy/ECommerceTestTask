@@ -1,5 +1,5 @@
 # ECommerceTestTask
-Test task #1 for "ООО НПП Новые Технологии Телекоммуникаций".
+DB and CSV analyzer with CLI. 
 > Target platform .Net 7.0
 
 > The application is self-contained and do not require any extra libraries.
@@ -7,6 +7,8 @@ Test task #1 for "ООО НПП Новые Технологии Телекомм
 > The application has been tested on Windows 11.
 >
 > The application is not applicable with Linux-based OSs in a current version.
+>
+> There are several predefined features in this application. These features have been designed to work with [this specific dataset](https://www.kaggle.com/datasets/mkechinov/ecommerce-behavior-data-from-multi-category-store). They exist as a sample and the functionality may be changed within the specific needs. 
 
 ## Release version usage
 1. Make sure you have an environmental variable named "ECOMMERCE_CONNECTION_STRING" added in your operating system to use SQL analysis.
